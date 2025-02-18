@@ -19,8 +19,8 @@ class Animal:
     @classmethod
     def dead_animal(cls) -> None:
         for animal in cls.alive:
-            if animal.health > 0:
-                cls.alive.append(animal)
+            if animal.health <= 0:
+                cls.alive.remove(animal)
             continue
 
     def damage(self, damage: int) -> None:
